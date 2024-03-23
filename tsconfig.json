@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "useUnknownInCatchVariables": false,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx",
+        "sourceMap": true,
+        "importHelpers": true,
+        "declaration": true,
+        "rootDir": ".",
+        "baseUrl": "src",
+        "paths": {
+            "@/*": ["./*"]
+        },
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "allowJs": false,
+        "forceConsistentCasingInFileNames": false,
+        "experimentalDecorators": true,
+        "downlevelIteration": true
+    },
+    "references": [{ "path": "./tsconfig.node.json" }],
+    "include": ["**/*.ts", "**/*.tsx", ".eslintrc.cjs", "tailwind.config.js", "postcss.config.js"],
+    "exclude": ["node_modules"]
+}
