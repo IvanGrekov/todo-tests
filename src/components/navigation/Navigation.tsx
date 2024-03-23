@@ -1,5 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
+import NavigationLink from '@/components/navigation-link/NavigationLink';
+import { PREV_PAGE_STATE_KEY } from '@/constants/routerState';
 import { EAppPages } from '@/types/appPages';
 
 export default function Navigation(): JSX.Element {
@@ -7,21 +9,18 @@ export default function Navigation(): JSX.Element {
 
     return (
         <nav className="flex justify-between px-6 py-4 gap-4">
-            <Link to={EAppPages.HOME} className="px-4 py-2 hover:bg-gray-700 rounded">
-                Home
-            </Link>
-            <Link to={EAppPages.ABOUT} className="px-4 py-2 hover:bg-gray-700 rounded">
-                About
-            </Link>
-            <Link
+            <NavigationLink to={EAppPages.HOME}>Home</NavigationLink>
+
+            <NavigationLink to={EAppPages.ABOUT}>About</NavigationLink>
+
+            <NavigationLink
                 to={EAppPages.CONTACT}
                 state={{
-                    prevPage: pathname,
+                    [PREV_PAGE_STATE_KEY]: pathname,
                 }}
-                className="px-4 py-2 hover:bg-gray-700 rounded"
             >
                 Contact
-            </Link>
+            </NavigationLink>
         </nav>
     );
 }
